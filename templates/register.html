@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Create Account</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="bg">
+<div class="card">
+<h2>Create Your Account</h2>
+<form method="POST" onsubmit="return validatePassword()">
+
+<label>Full Name</label> <input type="text" name="name" placeholder="Full Name" required>
+
+<label>Email</label> <input type="email" name="email" placeholder="Email Address" required>
+
+<label>Phone</label> <input type="text" name="phone" id="phone"
+placeholder="10 Digit Phone Number"
+maxlength="10"
+oninput="validatePhone()" required>
+
+<label>Address</label> <input type="text" name="address" placeholder="Enter Address"
+style="border:1px solid black; padding:10px; width:100%;" required>
+
+<label>Password</label> <input type="password" id="pass" name="password"
+placeholder="Create Password"
+oninput="checkStrength()" required>
+
+<label>Confirm Password</label> <input type="password" id="confirm"
+placeholder="Confirm Password" required>
+
+<button type="submit">Register</button>
+
+</form>
+
+<p><a href="/">Back to Login</a></p>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

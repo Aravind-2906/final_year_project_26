@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home - Glaucoma AI</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<nav>
+<h2>Glaucoma AI Screening System</h2>
+<a href="/detect">Start Detection</a>
+</nav>
+
+<section class="container">
+
+<h3>About System</h3>
+<p>
+This AI platform detects glaucoma using retinal fundus images.
+EfficientNet extracts retinal features and hybrid ML models predict glaucoma risk.
+</p>
+
+<h3>Features Used</h3>
+<ul>
+<li>EfficientNetB0 Feature Extraction</li>
+<li>SVM + Random Forest Hybrid Model</li>
+<li>Retinal Image Validation</li>
+<li>AI Medical Report</li>
+</ul>
+
+<h3>How It Works</h3>
+<p>
+Upload retinal image → AI extracts features → Hybrid classifier predicts glaucoma →
+Doctor-style medical report is generated.
+</p>
+
+</section>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

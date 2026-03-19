@@ -1,0 +1,170 @@
+body{
+font-family:'Segoe UI',sans-serif;
+margin:0;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:#333;
+}
+
+/* CENTER CARD */
+.bg{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.card{
+background:white;
+padding:35px;
+border-radius:14px;
+width:380px;
+box-shadow:0 15px 40px rgba(0,0,0,0.2);
+text-align:center;
+animation:fadeIn .6s ease;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+input,select{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+button{
+background:linear-gradient(90deg,#007BFF,#00c6ff);
+color:white;
+border:none;
+padding:12px;
+width:100%;
+border-radius:8px;
+cursor:pointer;
+font-weight:bold;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+nav{
+background:linear-gradient(90deg,#007BFF,#00c6ff);
+color:white;
+padding:18px;
+display:flex;
+justify-content:space-between;
+}
+
+.container{
+padding:40px;
+color:white;
+}
+
+.preview{
+width:220px;
+margin-top:15px;
+border-radius:10px;
+}
+
+.result{
+margin-top:20px;
+background:#f4f8fb;
+padding:15px;
+border-radius:10px;
+}
+
+/* LOADING SPINNER */
+.loader{
+border:6px solid #f3f3f3;
+border-top:6px solid #007BFF;
+border-radius:50%;
+width:40px;
+height:40px;
+animation:spin 1s linear infinite;
+margin:15px auto;
+display:none;
+}
+
+@keyframes spin{
+0%{transform:rotate(0deg);}
+100%{transform:rotate(360deg);}
+}
+
+/* POPUP */
+.popup{
+position:fixed;
+top:20px;
+right:20px;
+background:#00c851;
+color:white;
+padding:15px 25px;
+border-radius:8px;
+display:none;
+z-index:1000;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+/* ===== CREATIVE INPUT STYLE ===== */
+
+input{
+border:none;
+border-bottom:2px solid #ccc;
+transition:0.3s;
+background:transparent;
+}
+
+input:focus{
+outline:none;
+border-bottom:2px solid #00c6ff;
+}
+
+/* PASSWORD TEXT */
+#strengthText{
+font-size:13px;
+margin-bottom:10px;
+font-weight:bold;
+}
+
+.modal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.modal-content{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    width:400px;
+}
+
+.risk-item{
+display:flex;
+align-items:center;
+gap:10px;
+margin:10px 0;
+}
+
+.risk-item input{
+width:18px;
+height:18px;
+}
+
+.modal-content{
+background:white;
+padding:30px;
+border-radius:12px;
+width:420px;
+text-align:left;
+}

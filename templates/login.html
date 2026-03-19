@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login - Glaucoma AI</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="bg">
+<div id="popup" class="popup"></div>
+<div class="card">
+<h2>Glaucoma AI Login</h2>
+
+<form method="POST">
+<input type="email" name="email" placeholder="Email" required>
+<input type="password" name="password" placeholder="Password" required>
+<button type="submit">Login</button>
+</form>
+
+<p>New user? <a href="/register">Register Here</a></p>
+</div>
+
+</body>
+</html>

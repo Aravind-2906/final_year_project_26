@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Glaucoma Detection</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="bg">
+
+<div class="card">
+<h2>Upload Retinal Image</h2>
+<select id="eyeType">
+<option value="Left Eye">Left Eye</option>
+<option value="Right Eye">Right Eye</option>
+</select>
+<input type="file" id="imageInput" onchange="previewImage()">
+<img id="preview" class="preview"/>
+<p id="validationMsg" style="margin-top:10px;"></p>
+<button id="analyzeBtn" onclick="analyzeImage()" disabled>Analyze Image</button>
+<div id="loader" class="loader"></div>
+<p id="loadingText" style="display:none;">Analyzing retinal image using AI...</p>
+<div class="result" style="display:none;"></div>
+<h3>AI Medical Report</h3>
+<p>Diagnosis: <span id="diag">--</span></p>
+<p>Confidence: <span id="conf">--</span></p>
+<p>CDR Value: <span id="cdr">--</span></p>
+<button id="downloadBtn" style="display:none;">
+    Download Medical Report
+</button>
+</div>
+<div id="questionModal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <h3>Glaucoma Risk Assessment</h3>
+
+         <div class="risk-item">
+<input type="checkbox" id="ageRisk">
+<label for="ageRisk">Age between 40-65</label>
+</div>
+
+<div class="risk-item">
+<input type="checkbox" id="familyHistory">
+<label for="familyHistory">Family history of glaucoma</label>
+</div>
+
+<div class="risk-item">
+<input type="checkbox" id="eyePain">
+<label for="eyePain">Eye pain or irritation</label>
+</div>
+
+<div class="risk-item">
+<input type="checkbox" id="blurredVision">
+<label for="blurredVision">Blurred vision</label>
+</div>
+
+<div class="risk-item">
+<input type="checkbox" id="watering">
+<label for="watering">Excess tearing</label>
+</div>
+
+        <button onclick="submitQuestionnaire()">Submit</button>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
