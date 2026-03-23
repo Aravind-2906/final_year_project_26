@@ -1,17 +1,5 @@
-# Use a slim Python base image
-FROM python:3.10-slim
-
-# Add retry logic for apt-get to handle network issues
-RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/80-retries
-
-# Install system dependencies required by OpenCV
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    libglib2.0-0 \
-    libsm6 \
-    libxrender1 \
-    libxext6 \
-    libgl1-mesa-glx \
-    && rm -rf /var/lib/apt/lists/*
+# Use full bullseye image — stable and no system dependencies needed
+FROM python:3.10-bullseye
 
 # Set working directory
 WORKDIR /app
@@ -20,6 +8,7 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Install Python dependencies
+# opencv-python-headless bundles its own libs — no apt installs needed
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the project
