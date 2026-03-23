@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: final-year-project
+    env: docker
+    plan: free
+    branch: main
+    healthCheckPath: /
+    envVars:
+      - key: FLASK_ENV
+        value: production
